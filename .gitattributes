@@ -1,0 +1,24 @@
+# Store text as LF in the repo regardless of each contributor's core.autocrlf,
+# and check out as LF so the working copy is identical on every machine.
+* text=auto eol=lf
+
+# Windows scripts need CRLF or they break
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Never line-endings or diff these
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.pdf binary
+*.zip binary
+*.gz binary
+*.tar binary
+*.xlsx binary
+*.docx binary
+*.npy binary
+*.npz binary
+*.parquet binary
+*.pt binary
+*.onnx binary
