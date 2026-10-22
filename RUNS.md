@@ -42,4 +42,15 @@ Five docs written.
 - The requested "show what will be uploaded" review was moot: the folder was empty.
 - The `/status` model string is missing, as noted above.
 
-**Files:** `AGENTS.md`, `CLAUDE.md`, `README.md`, `PLAN.md`, `RUNS.md` (all uncommitted).
+**Follow-up in the same session:** added `.gitignore` and `.gitattributes`, then committed
+(`2280289` docs, `813881c` hygiene) and pushed `main` upstream.
+
+| Item | Check | Result |
+| --- | --- | --- |
+| ignore rules really bite | `git check-ignore -v` on `.venv/...`, `.env`, `runs/*.log`, `secrets.yaml` | all ignored; `.env.example` and `data/raw.csv` correctly not ignored |
+| `.gitattributes` didn't churn history | `git status --short` after adding it | no modifications to the already-committed docs |
+| push landed | local `git rev-parse HEAD` vs `git ls-remote origin HEAD` | identical (`813881c…`) |
+| remote contents | `gh api repos/.../contents` | 7 files, as intended |
+
+**Files:** `AGENTS.md`, `CLAUDE.md`, `README.md`, `PLAN.md`, `RUNS.md`, `.gitignore`,
+`.gitattributes` — committed and pushed to `origin/main`.

@@ -14,25 +14,27 @@ Done:
   on branch `main` with `origin` attached and the noreply commit identity set locally.
 - **2026-10-22 — working rules.** `AGENTS.md` (+ `CLAUDE.md` import), `README.md`,
   `PLAN.md`, `RUNS.md` written.
+- **2026-10-22 — hygiene.** `.gitignore` (venv, caches, secrets, run artifacts) and
+  `.gitattributes` (LF normalisation, binary attribution) added.
+- **2026-10-22 — first push.** Two commits pushed to `origin/main`; `main` now tracks the
+  remote and the public repo has 7 files.
 
 Not done:
 
-- Nothing is committed yet — all five files exist only on disk, and the remote has zero
-  commits and zero branches.
 - No `pyproject.toml`, no `.venv`, no code, no checks.
 - The project goal in `README.md` is still a placeholder.
 
 ## Next step
 
-Commit and push the docs so the repo has a first commit on `main`, then `uv init` and turn
-the goal in `README.md` into a first runnable experiment with a check attached to it.
+`uv init` and turn the goal in `README.md` into a first runnable experiment, with the check
+that gates "done" defined at the same time as the experiment rather than after it.
 
 Smaller tasks, in order:
 
-1. `git add -A && git commit -m "Add project docs and agent working rules" && git push -u origin main`
-2. Fill in the real goal and success metric in `README.md`.
-3. `uv init` — pin a Python version, add the first dependencies.
-4. Define the first experiment and, with it, the check that will be run before it is
+1. Fill in the real goal and success metric in `README.md`.
+2. `uv init` — pin a Python version, add the first dependencies, commit
+   `pyproject.toml` and `uv.lock` together.
+3. Define the first experiment and, with it, the check that will be run before it is
    called done.
 
 ## Open questions
